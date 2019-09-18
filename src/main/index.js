@@ -2,6 +2,9 @@ const express = require("express");
 const nunjucks = require("nunjucks");
 const bodyParser = require('body-parser');
 
+const { nameParam, userInput, fetchCharacter } = require('../helpers/getters/index');
+const { postForm } = require('../helpers/posts/index');
+
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -13,24 +16,13 @@ nunjucks.configure(PATH_TO_TEMPLATES, {
     express: app,
 });
 
-app.get('/name/:name', (req, res) => {
-    const data = {
-        firstName: req.params.name
-    };
-    res.render('index.html', data);
-});
-
-app.get('/userInput', (req, res) => {
-    res.render('userInput.html');
-});
-
-app.post('/userInput', (req, res) => {
-    const data ={
-        firstName: req.body.firstName,
-        lastName: req.body.lastName
-    };
-    res.render('userInput.html', data);
-});
+//GETS
+app.get('/name/:name', nameParam);
+app.get('/userInput', userInput);
+app.get('/fetchCharacter', fetchCharacter);
+//
+// //POSTS
+app.post('/userInput', postForm);
 
 app.listen(8080,() => {
     console.log('Its running')
