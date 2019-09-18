@@ -13,7 +13,7 @@ exports.userInput = (req,res) => {
 
 };
 
-exports.fetchCharacter = (req,res) => {
+exports.getCharacters = (req,res) => {
     const charactersArr = [];
     axios.get('https://rickandmortyapi.com/api/character/')
         .then( data => data.data.results)
@@ -32,4 +32,24 @@ exports.fetchCharacter = (req,res) => {
             console.log(data)
             res.render('getCharacters.html', data)
         });
-}
+};
+
+    exports.getCharacter = (req,res) => {
+    const charactersArr = [];
+    axios.get(`https://rickandmortyapi.com/api/character/${req.params.id}`)
+        .then( data => data.data)
+        .then(  character => {
+            const characterObj = {
+                name: character.name,
+                image: character.image
+            };
+            charactersArr.push(characterObj)
+        })
+        .then( () => {
+            //Data must be a object.
+            const data = {
+                characters: charactersArr
+            };
+            res.render('getCharacters.html', data)
+        });
+};

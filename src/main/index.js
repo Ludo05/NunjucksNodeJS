@@ -2,7 +2,7 @@ const express = require("express");
 const nunjucks = require("nunjucks");
 const bodyParser = require('body-parser');
 
-const { nameParam, userInput, fetchCharacter } = require('../helpers/getters/index');
+const { nameParam, userInput, getCharacters, getCharacter } = require('../helpers/getters/index');
 const { postForm } = require('../helpers/posts/index');
 
 const app = express();
@@ -19,7 +19,8 @@ nunjucks.configure(PATH_TO_TEMPLATES, {
 //GETS
 app.get('/name/:name', nameParam);
 app.get('/userInput', userInput);
-app.get('/fetchCharacter', fetchCharacter);
+app.get('/Characters', getCharacters);
+app.get('/Character/:id', getCharacter);
 //
 // //POSTS
 app.post('/userInput', postForm);
