@@ -1,3 +1,4 @@
+const { validation } = require('../util/index');
 
 exports.postForm = (req,res) => {
     const data ={
@@ -7,12 +8,26 @@ exports.postForm = (req,res) => {
     res.render('userInput.html', data);
 };
 
-//TODO Add post from one page to another username and password
 exports.postForm = (req,res) => {
     const data ={
-        userName: req.body.userName,
-        password: req.body.password
+        firstName: req.body.userName,
+        lastName: req.body.password
     };
-    res.render('userInput.html', data);
+    res.render('confirmation.html', data);
+};
+
+//TODO Add post from one page to another username and password
+exports.signIn = (req,res) => {
+    const {userName, password} = req.body;
+    const data ={
+        userName: userName,
+        password: password
+    };
+     const { errors, valid } = validation(userName,password);
+    if(!valid) {
+        res.status(300).json(errors);
+    } else {
+        res.render('confirmation.html', data);
+    }
 };
 

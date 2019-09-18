@@ -13,6 +13,12 @@ exports.userInput = (req,res) => {
 
 };
 
+//TODO FINISH OFFFF
+exports.confirmation = (req,res) => {
+    res.render('signIn.html');
+
+};
+
 exports.getCharacters = (req,res) => {
     const charactersArr = [];
     axios.get('https://rickandmortyapi.com/api/character/')
@@ -34,7 +40,7 @@ exports.getCharacters = (req,res) => {
         });
 };
 
-    exports.getCharacter = (req,res) => {
+exports.getCharacter = (req,res) => {
     const charactersArr = [];
     axios.get(`https://rickandmortyapi.com/api/character/${req.params.id}`)
         .then( data => data.data)
