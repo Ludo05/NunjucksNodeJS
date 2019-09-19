@@ -13,7 +13,15 @@ exports.userInput = (req,res) => {
 
 };
 
-//TODO FINISH OFFFF
+exports.macro = (req,res) => {
+    const data = {
+        colorName: 'black',
+        colorValue: 'some colour',
+        colorNotes: 'This is some news about the color'
+    }
+    res.render('mac.html', data)
+}
+
 exports.confirmation = (req,res) => {
     res.render('signIn.html');
 

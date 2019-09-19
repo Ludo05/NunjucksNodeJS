@@ -16,7 +16,6 @@ exports.postForm = (req,res) => {
     res.render('confirmation.html', data);
 };
 
-//TODO Add post from one page to another username and password
 exports.signIn = (req,res) => {
     const {userName, password} = req.body;
     const data ={
