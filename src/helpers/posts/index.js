@@ -25,7 +25,8 @@ exports.signIn = (req,res) => {
     };
      const { errors, valid } = validation(userName,password);
     if(!valid) {
-        res.status(300).json(errors);
+        console.log(errors);
+        res.status(300).json(errors.default);
     } else {
         res.render('confirmation.html', data);
     }

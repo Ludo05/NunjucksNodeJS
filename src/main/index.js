@@ -21,12 +21,11 @@ app.get('/name/:name', nameParam);
 app.get('/userInput', userInput);
 app.get('/characters', getCharacters);
 app.get('/character/:id', getCharacter);
-//TODO FINISH OFFFFF
-app.get('/character/:id', confirmation);
+app.get('/signIn', confirmation);
 //
 // //POSTS
 app.post('/userInput', postForm);
-app.post('/signIn', signIn);
+app.post('/confirmation', signIn);
 
 app.listen(8080,() => {
     console.log('Its running')
