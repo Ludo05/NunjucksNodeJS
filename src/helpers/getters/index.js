@@ -18,7 +18,7 @@ exports.macro = (req,res) => {
         colorName: 'black',
         colorValue: 'some colour',
         colorNotes: 'This is some news about the color'
-    }
+    };
     res.render('mac.html', data)
 }
 
