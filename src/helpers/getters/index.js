@@ -51,7 +51,6 @@ exports.getCharacters = (req,res) => {
             const data = {
                 characters: charactersArr
             };
-            console.log(data)
             res.render('getCharacters.html', data)
         });
 };

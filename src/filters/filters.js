@@ -12,3 +12,4 @@ exports.advancedShorten = (env) => {
         return string.split(' ')[0];
     })
 }
+

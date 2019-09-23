@@ -2,19 +2,15 @@
 <!-- You can add macros in file and export whenever needed.  -->
 {% macro cardSwatch(colorName, colorValue, colorNotes) %}
 <div class="color-swatch-tile">
-
     <div class="color-swatch"
          style="background-color: {{ colorValue }};">
     </div>
-
     <div class="color-name">
         <p> {{ colorName }}</p>
     </div>
-
     <div class="color-notes">
         {{ colorNotes }}
     </div>
-
 </div>
 {% endmacro %}
 
