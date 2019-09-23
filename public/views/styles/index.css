@@ -1,0 +1,17 @@
+.button {
+    text-decoration: none;
+    color: black;
+}
+
+.body {
+    background-color: bisque;
+}
+
+.header {
+    background-color: aliceblue;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+}

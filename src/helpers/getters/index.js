@@ -55,6 +55,10 @@ exports.getCharacters = (req,res) => {
         });
 };
 
+
+
+
+
 exports.getCharacter = (req,res) => {
     const charactersArr = [];
     axios.get(`https://rickandmortyapi.com/api/character/${req.params.id}`)

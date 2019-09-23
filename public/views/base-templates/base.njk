@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="../../src/styles/index.css"></script>
+    <script src="../styles/index.css"></script>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<header>
+<header class=".header">
     {% block header %}
     Main content
     {% endblock %}
 </header>
-<body>
+<body class=".body">
     {% block main %}
         Main content
     {% endblock %}
 </body>
-{% include "./components/footer.html"%}
+{% include "../components/footer.njk"%}
 </html>
