@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../../src/main/express.js"></script>
+    <script src="../../src/filters/filters.js"></script>
+    {% from "./components/character.njk" import character %}
+    <meta charset="UTF-8">
+    <title>Characters</title>
+</head>
+<body>
+<h1>List of characters</h1>
+        {% for item in characters %}
+            {{character(item.name,item.image) }}
+        {% endfor %}
+</body>
+</html>

@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="../src/main/index.js"></script>
-    <script src="../src/stlyes/index.css"></script>
+    <script src="../../src/main/express.js"></script>
+    <script src="../../src/styles/index.css"></script>
+    {% from "./components/button.njk" import button %}
     <title>Title</title>
 </head>
 <body>
@@ -12,9 +13,9 @@
 <p> {% set foo = "bar" %}
     {{ foo }}
 </p>
-<button class="button" ><a class="button">see photos</a></button>
+{{ button(text='Click to go the pictures') }}
 <!-- Similar to components in react-->
-{% include "components/footer.html" %}
+{% include "./components/footer.njk" %}
 
 </body>
 

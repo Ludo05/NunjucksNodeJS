@@ -7,6 +7,14 @@ exports.nameParam = (req,res) => {
     res.render('index.html', data);
 };
 
+exports.tryExtends = (req,res) => {
+    res.render('blockForm.njk');
+};
+
+exports.base = (req,res) => {
+    res.render('useBase.njk');
+};
+
 
 exports.userInput = (req,res) => {
     res.render('userInput.html');
@@ -23,7 +31,7 @@ exports.macro = (req,res) => {
 }
 
 exports.confirmation = (req,res) => {
-    res.render('signIn.html');
+    res.render('signIn.njk');
 
 };
 
