@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="../src/main/index.js"></script>
+{% from "./mac.njk" import cardSwatch %}
+{% from "./mac.njk" import testMacro %}
 </head>
 <body>
-{% from "./mac.njk" import cardSwatch %}
-
 {{ cardSwatch("grayDark", "#333333", "For things like code block backgrounds.") }}
-
+{{ testMacro("Yoda")  }}
 </body>
 </html>

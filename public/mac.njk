@@ -1,3 +1,5 @@
+
+<!-- You can add macros in file and export whenever needed.  -->
 {% macro cardSwatch(colorName, colorValue, colorNotes) %}
 <div class="color-swatch-tile">
 
@@ -14,6 +16,12 @@
     </div>
 
 </div>
-{% extends "index.html" %}
+{% endmacro %}
 
+{% macro testMacro(testWord) %}
+{% set foo = "Yoda" %}
+<div>
+    <p>{{testWord}}</p>
+    <p>{{foo}}</p>
+ </div
 {% endmacro %}
