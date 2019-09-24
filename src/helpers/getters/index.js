@@ -4,11 +4,7 @@ exports.nameParam = (req,res) => {
     const data = {
         firstName: req.params.name
     };
-    res.render('index.html', data);
-};
-
-exports.tryExtends = (req,res) => {
-    res.render('blockForm.njk');
+    res.render('index.njk', data);
 };
 
 exports.base = async (req,res) => {
@@ -31,20 +27,14 @@ exports.base = async (req,res) => {
             res.render('useBase.njk', dataToPush)
 };
 
-
-exports.userInput = (req,res) => {
-    res.render('userInput.html');
-
-};
-
 exports.macro = (req,res) => {
     const data = {
         colorName: 'black',
         colorValue: 'some colour',
         colorNotes: 'This is some news about the color'
     };
-    res.render('mac.html', data)
-}
+    res.render('mac.njk', data)
+};
 
 exports.confirmation = (req,res) => {
     res.render('signIn.njk');
@@ -67,7 +57,7 @@ exports.getCharacters = (req,res) => {
             const data = {
                 characters: charactersArr
             };
-            res.render('getCharacters.html', data)
+            res.render('getCharacters.njk', data)
         });
 };
 
@@ -91,6 +81,6 @@ exports.getCharacter = (req,res) => {
             const data = {
                 characters: charactersArr
             };
-            res.render('getCharacters.html', data)
+            res.render('getCharacters.njk', data)
         });
 };
