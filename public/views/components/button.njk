@@ -1,5 +1,5 @@
-{% macro button(text) %}
+{% macro button(text,href) %}
 <div>
-    <button class="button">{{text}}</button>
+    <button class="button"><a href="{{ href }}" style="text-decoration: none">{{ text }}</a></button>
 </div>
 {% endmacro %}

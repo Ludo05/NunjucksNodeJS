@@ -5,9 +5,10 @@
     <title>Title</title>
     {% from '../views/components/form.njk' import form %}
 </head>
+{% include '../views/components/header.njk' %}
 <body>
-<!-- Can be made as a macro (better if it had arguments).-->
+<!-- Can be made as a macro.-->
     {{ form() }}
-
 </body>
+{%  include '../views/components/footer.njk' %}
 </html>

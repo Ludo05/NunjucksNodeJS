@@ -1,14 +1,11 @@
+{% from '../components/textInput.njk' import textInput %}
 {% macro form() %}
 
-<form method="post" action="/confirmation">
-    <h3>Enter your credentials</h3>
-    <label>Username:
-        <input type="text" name="userName">
-    </label>
-    <label>
-        Password:
-        <input type="text" name="password">
-    </label>
-    <input type="submit" value="submit">
+
+<form method="post" action="/confirmation" style="padding-top: 25%; padding-left: 20%;">
+    <h3 style="text-decoration-line: underline">Enter your credentials</h3>
+        {{  textInput('Username ','username') }}
+        {{  textInput('Password ','password') }}
+        {% include './submitButton.njk' %}
 </form>
 {% endmacro %}

@@ -5,20 +5,26 @@ const mockDb = [
     {username: 'test', password: 'user'}
 ];
 
-exports.validation = (username, password) => {
+const validation = (username, password) => {
     const errors = {};
     if (username.length < 3 || password.length < 3) {
         errors.longerCreds = 'Please make creds longer.'
     }
-    const user = mockDb.filter( obj => obj.username === username && obj.password === password);
-    if(Object.keys(user).length === 0){
-        errors.invalid = 'Wrong credentials.'
-    }
+    checkCreds(username,password,errors);
     return {
         errors,
-        valid: Object.values(errors).length === 0
-
+        valid: Object.keys(errors).length === 0
     };
 };
 
+const checkCreds = (username,password,errors) => {
+    const user = mockDb.filter( obj => obj.username === username && obj.password === password);
+    if(Object.keys(user).length === 0) {
+         errors.creds = 'Wrong credentials.'
+    }
+}
+
+exports.validation = validation;
+exports.checkCreds = checkCreds;
+exports.database = mockDb;
 
