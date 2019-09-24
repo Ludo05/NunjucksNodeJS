@@ -20,8 +20,8 @@ app.get('/signIn', confirmation);
 app.get('/macro', macro);
 app.get('/extends', tryExtends);
 app.get('/base', base);
+
 // //POSTS
-app.post('/userInput', postForm);
 app.post('/confirmation', signIn);
 
 app.listen(8080,() => {

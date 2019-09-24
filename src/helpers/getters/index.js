@@ -11,25 +11,24 @@ exports.tryExtends = (req,res) => {
     res.render('blockForm.njk');
 };
 
-exports.base = (req,res) => {
-    const charactersArr = [];
-    axios.get('https://rickandmortyapi.com/api/character/')
-        .then( data => data.data.results)
-        .then( characters => characters.map( character => {
+exports.base = async (req,res) => {
+     const charactersArr = [];
+     const data = await axios.get('https://rickandmortyapi.com/api/character/');
+     const characters = await  data.data.results;
+     characters.map(character => {
             const characterObj = {
                 name: character.name,
                 image: character.image
             };
             charactersArr.push(characterObj)
-        }))
-        .then( () => {
+        })
+
             //Data must be a object.
-            const data = {
+            const dataToPush  = {
                 characters: charactersArr,
                 Title: 'Characters From Title'
             };
-            res.render('useBase.njk', data)
-        });
+            res.render('useBase.njk', dataToPush)
 };
 
 
