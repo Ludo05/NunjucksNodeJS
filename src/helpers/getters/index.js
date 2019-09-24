@@ -1,4 +1,5 @@
 const axios = require('axios');
+const {ifStatement} = require("../util");
 
 exports.nameParam = (req,res) => {
     const data = {
@@ -39,6 +40,15 @@ exports.macro = (req,res) => {
 exports.confirmation = (req,res) => {
     res.render('signIn.njk');
 
+};
+
+
+
+exports.ifFunc = (req,res) => {
+    const data = {
+        variable: ifStatement()
+    };
+    res.render('iffunc.njk', data)
 };
 
 exports.getCharacters = (req,res) => {

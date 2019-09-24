@@ -24,6 +24,13 @@ const checkCreds = (username,password,errors) => {
     }
 }
 
+
+exports.ifStatement = () => {
+    const number = Math.floor(Math.random() * 4);
+    return number > 2;
+};
+
+
 exports.validation = validation;
 exports.checkCreds = checkCreds;
 exports.database = mockDb;
