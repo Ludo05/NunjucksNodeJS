@@ -1,13 +1,12 @@
 {% extends "./base-templates/base.njk" %}
-{% include '../views/styles/index.css' %}
+{% from './components/character.njk' import character %}
 
   {% block header %}
     <h1>Welcome to using extends</h1>
   {% endblock %}
 
   {% block main %}
-        <div class=".body">
-          <p> This is the main content from the extends html
-          </br> This could be used if you have a lot of pages with similar structures.</p>
-        </div>
+     {% for char in characters %}
+        {{   character(char.name,char.image) }}
+      {% endfor %}
   {% endblock %}

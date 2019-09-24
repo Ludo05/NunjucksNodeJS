@@ -1,17 +1,24 @@
-.button {
-    text-decoration: none;
-    color: black;
-}
-
 .body {
     background-color: bisque;
 }
 
 .header {
-    background-color: aliceblue;
+    background-color: blue;
 }
 
 .footer {
     background-color: black;
     color: white;
 }
+
+#button {
+    background-color: red;
+    color: white;
+}
+
+
+#background-main {
+    background-color: blueviolet
+}
+
+

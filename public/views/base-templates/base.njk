@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="../styles/index.css"></script>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{Title}}</title>
 </head>
-<header class=".header">
+<header class="header">
     {% block header %}
-    Main content
     {% endblock %}
 </header>
-<body class=".body">
+<body id="background-main">
     {% block main %}
-        Main content
     {% endblock %}
 </body>
 {% include "../components/footer.njk"%}

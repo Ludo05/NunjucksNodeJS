@@ -12,7 +12,24 @@ exports.tryExtends = (req,res) => {
 };
 
 exports.base = (req,res) => {
-    res.render('useBase.njk');
+    const charactersArr = [];
+    axios.get('https://rickandmortyapi.com/api/character/')
+        .then( data => data.data.results)
+        .then( characters => characters.map( character => {
+            const characterObj = {
+                name: character.name,
+                image: character.image
+            };
+            charactersArr.push(characterObj)
+        }))
+        .then( () => {
+            //Data must be a object.
+            const data = {
+                characters: charactersArr,
+                Title: 'Characters From Title'
+            };
+            res.render('useBase.njk', data)
+        });
 };
 
 
